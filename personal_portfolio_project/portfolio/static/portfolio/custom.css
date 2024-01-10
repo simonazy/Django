@@ -1,0 +1,29 @@
+/* class */
+.navbar-nav .nav-link {
+    color: rgba(0,0,0,1) !important;
+}
+
+.navbar-nav .nav-link:hover {
+    color: rgba(0,0,0,.5) !important;
+}
+
+body{
+    font-family: 'Salsa', cursive;
+}
+
+/* id */
+#blogtitle {
+    font-size: 6rem;
+}
+
+@media(min-width: 992px){
+    #hometext {
+        font-size: 4rem;
+    }
+    #blogdetailtitle{
+        font-size: 5rem;
+    }
+}
+
+/* @media (min-width: 992px) { ... }: 
+This is a media query that specifies styles to be applied when the minimum viewport width is 992 pixels or wider. */
