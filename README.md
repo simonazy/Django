@@ -15,3 +15,9 @@
 - Objects in database
 - Media: images
 - static files
+
+### Project 3: Todo 
+- forms in Django
+  - login, logout, authenticate
+  - UserCreationForm, AuthenticationForm
+- Error handeling
