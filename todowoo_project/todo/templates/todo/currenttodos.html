@@ -1,0 +1,10 @@
+{% if todos %}
+   <h1>{{ todos.count }} Current Todo{{ todos.count|pluralize }}</h1> 
+{% endif%}
+
+{% for todo in todos%}<a href="{% url 'viewtodo' todo_pk=todo.id %}">
+<b>{{todo.title}}</b>{% if todo.memo%} - {{todo.memo|truncatechars:30}}{% endif %}
+</a>
+{% endfor%}
+
+<a href="{%url 'createtodo'%}">New Todo</a>

@@ -1,0 +1,14 @@
+<h2>New Todo</h2>
+{% if error %}
+{{ error }}
+{% endif %}
+<form method="POST">
+    {% csrf_token %}
+    <label for="title">Title</label>
+    <input type="text" name="title"> 
+    <label for="memo">Memo</label>
+    <textarea name="memo"></textarea>
+    <input type="checkbox" name="important">
+    <label>Important</label>
+    <button type="submit">Save</button>
+</form>

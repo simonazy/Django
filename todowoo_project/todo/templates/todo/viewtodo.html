@@ -1,0 +1,23 @@
+<form method="POST">
+    {% csrf_token %}
+    <label>Title</label>
+    <input type="text" name="title" value="{{the_todo.title}}">
+    <label>Memo</label>
+    <textarea name="memo">{{the_todo.memo}}</textarea>
+    <input type="checkbox" {% if the_todo.important %}checked{% endif %}>
+    <label>Important</label>
+    <button type="submit">Save</button>
+    <button type="button" onclick="$('#complete').click()">Complete</button>
+    <button type="button" onclick="$('#delete').click()">Delete</button>
+</form>
+
+{% if the_todo.datecompleted is None %}
+<form method="POST" action="{% url 'completetodo' the_todo.id%}">
+    {% csrf_token %}
+    <button id="complete" type="submit">Complete</button>
+</form>
+{% endif %}
+<form method="POST" action="{% url 'deletetodo' the_todo.id %}">
+    {% csrf_token %}
+    <button id="delete" type="submit">Delete</button>
+</form>
